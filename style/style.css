@@ -15,7 +15,9 @@ ul li{
 
 body {
   font-family: "Poppins", sans-serif;
-  animation: rotation 30s linear infinite ;
+  /* animation: rotation 30s linear infinite ; */
+  background: url(../assets/vector-JUL-2020-88.jpg) no-repeat center center/cover;
+  backdrop-filter: blur(2px);
   color: black;
   display: flex;
   flex-direction: column;
@@ -23,6 +25,59 @@ body {
   justify-content: center;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
+}
+img{
+  position: absolute;
+  width: 600px;
+}
+#icons img:nth-child(1){
+  top: 0;
+  left: 0;
+}
+#icons img:nth-child(2){
+  top: 0;
+  left: 0;
+}
+#icons img:nth-child(3){
+  bottom: 10%;
+  left: 0;
+}
+#icons img:nth-child(4){
+  top: 0;
+  right: 0;
+}
+#icons img:nth-child(5){
+  bottom: 0;
+  right: 0;
+}
+#icons img:nth-child(6){
+  top: 0;
+  right: 0;
+}
+#icons img:nth-child(7){
+  bottom: 0;
+  left: 0;
+}
+#icons img:nth-child(8){
+  top: 20%;
+  right: 0;
+}
+#icons img:nth-child(9){
+  bottom: 20%;
+  left: 0;
+}
+#icons img:nth-child(10){
+  top: 20%;
+  left: 0;
+}
+#icons img:nth-child(11){
+  bottom: 0%;
+  right: 0;
+}
+#icons img:nth-child(12){
+  bottom: 20%;
+  left: 20%;
 }
 
 header {
@@ -31,6 +86,10 @@ header {
   padding: 21px 35px;
   margin-bottom: 20px;
   background: white;
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(4px);
+  color: white;
   border-radius: 20px;
 }
 header .header{
@@ -47,6 +106,7 @@ header .header h1{
   align-items: center;
   justify-content: space-between;
   width: 16%;
+  margin-bottom: 20px;
 }
 
 
@@ -108,14 +168,17 @@ width: 100%;
 
 .do-todo, .done-todo{
   width: 455px;
-  background: white;
+  background: rgba(255, 255, 255, 0.11);
   border-radius: 20px;
   padding: 30px 35px;
   padding-bottom: 50px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.24);
 }
 .do-todo .header{
   display: flex;
   justify-content: space-between;
+
 }
 .done-todo .header{
   display: flex;
@@ -124,10 +187,18 @@ width: 100%;
 .do-todo .header h2{
   font-size: 18px;
   font-weight: 500;
+  color: white;
+}
+.do-todo .header svg{
+  color: white;
+}
+.done-todo .header svg{
+  color: white;
 }
 .done-todo .header h2{
   font-size: 18px;
   font-weight: 500;
+  color: white;
 }
 .task-checkbox {
   border-radius: 50%;
@@ -324,6 +395,15 @@ li {
       justify-content: space-between;
     }
 }
+/* #main{
+  background: url(../assets/vecteezy_galaxy-space-abstract-background-with-star-and-comet-shapes_8029888.svg) no-repeat center center/cover;
+  width: 150%;
+  height: 150%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+} */
 
 @keyframes rotation {
   0% {

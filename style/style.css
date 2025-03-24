@@ -216,6 +216,23 @@ li {
   border: 1px solid var(--dark-orange);
 }
 
+.edit{
+  position: absolute;
+  cursor: pointer;
+  color: var(--dark-orange);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 10px;
+  background: transparent;
+  border: 1px solid var(--dark-orange);
+  right: 30px;
+  border-radius: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 
 @media (max-width: 600px){
   body {

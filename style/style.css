@@ -224,14 +224,20 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8px 10px;
+  padding: 5px 6px;
   background: transparent;
   border: 1px solid var(--dark-orange);
-  right: 30px;
+  right: 45px;
   border-radius: 20px;
   top: 50%;
   transform: translateY(-50%);
 }
+.edit:hover{
+  color: white;
+  background: var(--dark-orange);
+  border: 1px solid var(--dark-orange);
+}
+
 
 
 @media (max-width: 600px){

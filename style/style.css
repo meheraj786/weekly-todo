@@ -1,0 +1,609 @@
+/* styles.css */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul li{
+  list-style-type: none;
+}
+:root{
+  --orange: #E68B82;
+  --dark-orange: #FF5945;
+  --blue: #163677;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  animation: rotation 30s linear infinite ;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+header {
+  width: 950px;
+  height: 170px;
+  padding: 21px 35px;
+  margin-bottom: 20px;
+  background: white;
+  border-radius: 20px;
+}
+header .header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header p{  
+  font-size: 18px;
+  font-weight: 400;
+}
+header .header h1{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 16%;
+}
+
+
+
+input, button {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+
+}
+.input{
+position: relative;
+width: 100%;
+
+}
+#new-task{
+  width: 880px;
+  height: 50px;
+  border-radius: 30px;
+  padding-right: 120px;
+  padding-left: 20px;
+  background: #EDEEF0;
+}
+
+
+#add-task{
+  background-color: var(--dark-orange);
+  border: 1px solid var(--dark-orange);
+  color: white;
+  cursor: pointer;
+  width: 98px;
+  height: 40px;
+  border-radius: 30px;
+  position: absolute;
+  color: white;
+  top: 5px;
+  right: 0;
+}
+#add-task:hover{
+  background-color: transparent;
+  border: 1px solid var(--dark-orange);
+  color: var(--dark-orange);
+  cursor: pointer;
+  width: 98px;
+  height: 40px;
+  border-radius: 30px;
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
+.todo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 950px;
+}
+
+.do-todo, .done-todo{
+  width: 455px;
+  background: white;
+  border-radius: 20px;
+  padding: 30px 35px;
+  padding-bottom: 50px;
+}
+.do-todo .header{
+  display: flex;
+  justify-content: space-between;
+}
+.done-todo .header{
+  display: flex;
+  justify-content: space-between;
+}
+.do-todo .header h2{
+  font-size: 18px;
+  font-weight: 500;
+}
+.done-todo .header h2{
+  font-size: 18px;
+  font-weight: 500;
+}
+.task-checkbox {
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+.task-checkbox:hover::after{
+  color: red;
+}
+.task-checkbox::after {
+  content: '✔';
+  color: transparent;
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.task-checkbox:checked {
+  background-color: var(--dark-orange);
+  border-color: var(--dark-orange);
+}
+
+.task-checkbox:checked::after {
+  content: '✔';
+  color: white;
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+hr{
+  border: 0.5px solid #EDEEF0;
+}
+
+button:hover {
+  background-color: #ff4c4c;
+}
+
+ul{
+  width: 100%; 
+  word-break: break-word; 
+}
+li {
+  background: #EDEEF0;
+  border-radius: 30px;
+  color: black;
+  width: 100%;
+  padding: 5px;
+  padding-right: 68px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  list-style: none;
+}
+
+
+
+.delete-button{
+  position: absolute;
+  cursor: pointer;
+  color: var(--dark-orange);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 10px;
+  background: transparent;
+  border: 1px solid var(--dark-orange);
+  right: 5px;
+  border-radius: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.delete-button:hover{
+  color: white;
+  background: var(--dark-orange);
+  border: 1px solid var(--dark-orange);
+}
+
+
+@media (max-width: 600px){
+  body {
+    font-family: "Poppins", sans-serif;
+    animation: rotation 30s linear infinite ;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 100vh;
+  }
+  header {
+    width: 100%;
+    height: auto;
+    padding: 21px 35px;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 20px;
+  }
+  header .header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  header .header h1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  header .header p{
+    margin: 20px 0;
+  }
+  .input{
+    position: relative;
+    width: 100%;
+    
+    }
+    #new-task{
+      width: 100%;
+      height: 50px;
+      border-radius: 30px;
+      padding-right: 120px;
+      padding-left: 20px;
+      background: #EDEEF0;
+    }
+    
+    
+    #add-task{
+      background-color: var(--dark-orange);
+      border: 1px solid var(--dark-orange);
+      color: white;
+      cursor: pointer;
+      width: 88px;
+      height: 40px;
+      border-radius: 30px;
+      position: absolute;
+      color: white;
+      top: 5px;
+      right: 0;
+    }
+    .todo{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    
+    .do-todo, .done-todo{
+      width: 100%;
+      background: white;
+      border-radius: 20px;
+      padding: 30px 35px;
+      padding-bottom: 50px;
+      margin: 10px 0;
+    }
+    .do-todo .header{
+      display: flex;
+      justify-content: space-between;
+    }
+}
+
+@keyframes rotation {
+  0% {
+    background: linear-gradient(0deg, var(--blue), var(--orange));
+  }
+  1% {
+    background: linear-gradient(3.6deg, var(--blue), var(--orange));
+  }
+  2% {
+    background: linear-gradient(7.2deg, var(--blue), var(--orange));
+  }
+  3% {
+    background: linear-gradient(10.8deg, var(--blue), var(--orange));
+  }
+  4% {
+    background: linear-gradient(14.4deg, var(--blue), var(--orange));
+  }
+  5% {
+    background: linear-gradient(18deg, var(--blue), var(--orange));
+  }
+  6% {
+    background: linear-gradient(21.6deg, var(--blue), var(--orange));
+  }
+  7% {
+    background: linear-gradient(25.2deg, var(--blue), var(--orange));
+  }
+  8% {
+    background: linear-gradient(28.8deg, var(--blue), var(--orange));
+  }
+  9% {
+    background: linear-gradient(32.4deg, var(--blue), var(--orange));
+  }
+  10% {
+    background: linear-gradient(36deg, var(--blue), var(--orange));
+  }
+  11% {
+    background: linear-gradient(39.6deg, var(--blue), var(--orange));
+  }
+  12% {
+    background: linear-gradient(43.2deg, var(--blue), var(--orange));
+  }
+  13% {
+    background: linear-gradient(46.8deg, var(--blue), var(--orange));
+  }
+  14% {
+    background: linear-gradient(50.4deg, var(--blue), var(--orange));
+  }
+  15% {
+    background: linear-gradient(54deg, var(--blue), var(--orange));
+  }
+  16% {
+    background: linear-gradient(57.6deg, var(--blue), var(--orange));
+  }
+  17% {
+    background: linear-gradient(61.2deg, var(--blue), var(--orange));
+  }
+  18% {
+    background: linear-gradient(64.8deg, var(--blue), var(--orange));
+  }
+  19% {
+    background: linear-gradient(68.4deg, var(--blue), var(--orange));
+  }
+  20% {
+    background: linear-gradient(72deg, var(--blue), var(--orange));
+  }
+  21% {
+    background: linear-gradient(75.6deg, var(--blue), var(--orange));
+  }
+  22% {
+    background: linear-gradient(79.2deg, var(--blue), var(--orange));
+  }
+  23% {
+    background: linear-gradient(82.8deg, var(--blue), var(--orange));
+  }
+  24% {
+    background: linear-gradient(86.4deg, var(--blue), var(--orange));
+  }
+  25% {
+    background: linear-gradient(90deg, var(--blue), var(--orange));
+  }
+  26% {
+    background: linear-gradient(93.6deg, var(--blue), var(--orange));
+  }
+  27% {
+    background: linear-gradient(97.2deg, var(--blue), var(--orange));
+  }
+  28% {
+    background: linear-gradient(100.8deg, var(--blue), var(--orange));
+  }
+  29% {
+    background: linear-gradient(104.4deg, var(--blue), var(--orange));
+  }
+  30% {
+    background: linear-gradient(108deg, var(--blue), var(--orange));
+  }
+  31% {
+    background: linear-gradient(111.6deg, var(--blue), var(--orange));
+  }
+  32% {
+    background: linear-gradient(115.2deg, var(--blue), var(--orange));
+  }
+  33% {
+    background: linear-gradient(118.8deg, var(--blue), var(--orange));
+  }
+  34% {
+    background: linear-gradient(122.4deg, var(--blue), var(--orange));
+  }
+  35% {
+    background: linear-gradient(126deg, var(--blue), var(--orange));
+  }
+  36% {
+    background: linear-gradient(129.6deg, var(--blue), var(--orange));
+  }
+  37% {
+    background: linear-gradient(133.2deg, var(--blue), var(--orange));
+  }
+  38% {
+    background: linear-gradient(136.8deg, var(--blue), var(--orange));
+  }
+  39% {
+    background: linear-gradient(140.4deg, var(--blue), var(--orange));
+  }
+  40% {
+    background: linear-gradient(144deg, var(--blue), var(--orange));
+  }
+  41% {
+    background: linear-gradient(147.6deg, var(--blue), var(--orange));
+  }
+  42% {
+    background: linear-gradient(151.2deg, var(--blue), var(--orange));
+  }
+  43% {
+    background: linear-gradient(154.8deg, var(--blue), var(--orange));
+  }
+  44% {
+    background: linear-gradient(158.4deg, var(--blue), var(--orange));
+  }
+  45% {
+    background: linear-gradient(162deg, var(--blue), var(--orange));
+  }
+  46% {
+    background: linear-gradient(165.6deg, var(--blue), var(--orange));
+  }
+  47% {
+    background: linear-gradient(169.2deg, var(--blue), var(--orange));
+  }
+  48% {
+    background: linear-gradient(172.8deg, var(--blue), var(--orange));
+  }
+  49% {
+    background: linear-gradient(176.4deg, var(--blue), var(--orange));
+  }
+  50% {
+    background: linear-gradient(180deg, var(--blue), var(--orange));
+  }
+  51% {
+    background: linear-gradient(183.6deg, var(--blue), var(--orange));
+  }
+  52% {
+    background: linear-gradient(187.2deg, var(--blue), var(--orange));
+  }
+  53% {
+    background: linear-gradient(190.8deg, var(--blue), var(--orange));
+  }
+  54% {
+    background: linear-gradient(194.4deg, var(--blue), var(--orange));
+  }
+  55% {
+    background: linear-gradient(198deg, var(--blue), var(--orange));
+  }
+  56% {
+    background: linear-gradient(201.6deg, var(--blue), var(--orange));
+  }
+  57% {
+    background: linear-gradient(205.2deg, var(--blue), var(--orange));
+  }
+  58% {
+    background: linear-gradient(208.8deg, var(--blue), var(--orange));
+  }
+  59% {
+    background: linear-gradient(212.4deg, var(--blue), var(--orange));
+  }
+  60% {
+    background: linear-gradient(216deg, var(--blue), var(--orange));
+  }
+  61% {
+    background: linear-gradient(219.6deg, var(--blue), var(--orange));
+  }
+  62% {
+    background: linear-gradient(223.2deg, var(--blue), var(--orange));
+  }
+  63% {
+    background: linear-gradient(226.8deg, var(--blue), var(--orange));
+  }
+  64% {
+    background: linear-gradient(230.4deg, var(--blue), var(--orange));
+  }
+  65% {
+    background: linear-gradient(234deg, var(--blue), var(--orange));
+  }
+  66% {
+    background: linear-gradient(237.6deg, var(--blue), var(--orange));
+  }
+  67% {
+    background: linear-gradient(241.2deg, var(--blue), var(--orange));
+  }
+  68% {
+    background: linear-gradient(244.8deg, var(--blue), var(--orange));
+  }
+  69% {
+    background: linear-gradient(248.4deg, var(--blue), var(--orange));
+  }
+  70% {
+    background: linear-gradient(252deg, var(--blue), var(--orange));
+  }
+  71% {
+    background: linear-gradient(255.6deg, var(--blue), var(--orange));
+  }
+  72% {
+    background: linear-gradient(259.2deg, var(--blue), var(--orange));
+  }
+  73% {
+    background: linear-gradient(262.8deg, var(--blue), var(--orange));
+  }
+  74% {
+    background: linear-gradient(266.4deg, var(--blue), var(--orange));
+  }
+  75% {
+    background: linear-gradient(270deg, var(--blue), var(--orange));
+  }
+  76% {
+    background: linear-gradient(273.6deg, var(--blue), var(--orange));
+  }
+  77% {
+    background: linear-gradient(277.2deg, var(--blue), var(--orange));
+  }
+  78% {
+    background: linear-gradient(280.8deg, var(--blue), var(--orange));
+  }
+  79% {
+    background: linear-gradient(284.4deg, var(--blue), var(--orange));
+  }
+  80% {
+    background: linear-gradient(288deg, var(--blue), var(--orange));
+  }
+  81% {
+    background: linear-gradient(291.6deg, var(--blue), var(--orange));
+  }
+  82% {
+    background: linear-gradient(295.2deg, var(--blue), var(--orange));
+  }
+  83% {
+    background: linear-gradient(298.8deg, var(--blue), var(--orange));
+  }
+  84% {
+    background: linear-gradient(302.4deg, var(--blue), var(--orange));
+  }
+  85% {
+    background: linear-gradient(306deg, var(--blue), var(--orange));
+  }
+  86% {
+    background: linear-gradient(309.6deg, var(--blue), var(--orange));
+  }
+  87% {
+    background: linear-gradient(313.2deg, var(--blue), var(--orange));
+  }
+  88% {
+    background: linear-gradient(316.8deg, var(--blue), var(--orange));
+  }
+  89% {
+    background: linear-gradient(320.4deg, var(--blue), var(--orange));
+  }
+  90% {
+    background: linear-gradient(324deg, var(--blue), var(--orange));
+  }
+  91% {
+    background: linear-gradient(327.6deg, var(--blue), var(--orange));
+  }
+  92% {
+    background: linear-gradient(331.2deg, var(--blue), var(--orange));
+  }
+  93% {
+    background: linear-gradient(334.8deg, var(--blue), var(--orange));
+  }
+  94% {
+    background: linear-gradient(338.4deg, var(--blue), var(--orange));
+  }
+  95% {
+    background: linear-gradient(342deg, var(--blue), var(--orange));
+  }
+  96% {
+    background: linear-gradient(345.6deg, var(--blue), var(--orange));
+  }
+  97% {
+    background: linear-gradient(349.2deg, var(--blue), var(--orange));
+  }
+  98% {
+    background: linear-gradient(352.8deg, var(--blue), var(--orange));
+  }
+  99% {
+    background: linear-gradient(356.4deg, var(--blue), var(--orange));
+  }
+  100% {
+    background: linear-gradient(360deg, var(--blue), var(--orange));
+  }
+}

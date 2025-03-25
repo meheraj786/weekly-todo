@@ -9,6 +9,22 @@ const wedList= document.querySelector("#wednesday-list")
 const thursList= document.querySelector("#thirsday-list")
 const friList= document.querySelector("#friday-list")
 const satList= document.querySelector("#saturday-list")
+let all= document.querySelector(".all")
+let day1= document.querySelector(".day1")
+let day2= document.querySelector(".day2")
+let day3= document.querySelector(".day3")
+let day4= document.querySelector(".day4")
+let day5= document.querySelector(".day5")
+let day6= document.querySelector(".day6")
+let day7= document.querySelector(".day7")
+let doTodo= document.querySelector(".do-todo")
+let SundayTodo= document.querySelector(".do-todo-sunday")
+let MondayTodo= document.querySelector(".do-todo-monday")
+let TuesdayTodo= document.querySelector(".do-todo-tuesday")
+let WednesdayTodo= document.querySelector(".do-todo-wednesday")
+let ThursdayTodo= document.querySelector(".do-todo-thursday")
+let FridayTodo= document.querySelector(".do-todo-friday")
+let SaturdayTodo= document.querySelector(".do-todo-saturday")
 
 addTaskButton.addEventListener("click", function () {
   const taskText = taskInput.value;
@@ -19,92 +35,11 @@ addTaskButton.addEventListener("click", function () {
   let Thursday= document.querySelector(".Thursday")
   let Friday= document.querySelector(".Friday")
   let Saturday= document.querySelector(".Saturday")
-  let SundayTodo= document.querySelector(".do-todo-sunday")
-  let MondayTodo= document.querySelector(".do-todo-monday")
-  let TuesdayTodo= document.querySelector(".do-todo-tuesday")
-  let WednesdayTodo= document.querySelector(".do-todo-wednesday")
-  let ThursdayTodo= document.querySelector(".do-todo-thursday")
-  let FridayTodo= document.querySelector(".do-todo-friday")
-  let SaturdayTodo= document.querySelector(".do-todo-saturday")
 
 
-  let day1= document.querySelector(".day1")
-  let day2= document.querySelector(".day2")
-  let day3= document.querySelector(".day3")
-  let day4= document.querySelector(".day4")
-  let day5= document.querySelector(".day5")
-  let day6= document.querySelector(".day6")
-  let day7= document.querySelector(".day7")
-  day1.addEventListener("click", function(){
-    SundayTodo.style.display="flex"
-    MondayTodo.style.display="none"
-    TuesdayTodo.style.display="none"
-    WednesdayTodo.style.display="none"
-    ThursdayTodo.style.display="none"
-    FridayTodo.style.display="none"
-    SaturdayTodo.style.display="none"
-    todoList.style.display="none"
-  })
-  day2.addEventListener("click", function(){
-    SundayTodo.style.display="none"
-    MondayTodo.style.display="flex"
-    TuesdayTodo.style.display="none"
-    WednesdayTodo.style.display="none"
-    ThursdayTodo.style.display="none"
-    FridayTodo.style.display="none"
-    SaturdayTodo.style.display="none"
-    todoList.style.display="none"
-  })
-  day3.addEventListener("click", function(){
-    SundayTodo.style.display="none"
-    MondayTodo.style.display="none"
-    TuesdayTodo.style.display="flex"
-    WednesdayTodo.style.display="none"
-    ThursdayTodo.style.display="none"
-    FridayTodo.style.display="none"
-    SaturdayTodo.style.display="none"
-    todoList.style.display="none"
-  })
-  day4.addEventListener("click", function(){
-    SundayTodo.style.display="none"
-    MondayTodo.style.display="none"
-    TuesdayTodo.style.display="none"
-    WednesdayTodo.style.display="flex"
-    ThursdayTodo.style.display="none"
-    FridayTodo.style.display="none"
-    SaturdayTodo.style.display="none"
-    todoList.style.display="none"
-  })
-  day5.addEventListener("click", function(){
-    SundayTodo.style.display="none"
-    MondayTodo.style.display="none"
-    TuesdayTodo.style.display="none"
-    WednesdayTodo.style.display="none"
-    ThursdayTodo.style.display="flex"
-    FridayTodo.style.display="none"
-    SaturdayTodo.style.display="none"
-    todoList.style.display="none"
-  })
-  day6.addEventListener("click", function(){
-    SundayTodo.style.display="none"
-    MondayTodo.style.display="none"
-    TuesdayTodo.style.display="none"
-    WednesdayTodo.style.display="none"
-    ThursdayTodo.style.display="none"
-    FridayTodo.style.display="flex"
-    SaturdayTodo.style.display="none"
-    todoList.style.display="none"
-  })
-  day7.addEventListener("click", function(){
-    SundayTodo.style.display="none"
-    MondayTodo.style.display="none"
-    TuesdayTodo.style.display="none"
-    WednesdayTodo.style.display="none"
-    ThursdayTodo.style.display="none"
-    FridayTodo.style.display="none"
-    SaturdayTodo.style.display="flex"
-    todoList.style.display="none"
-  })
+
+
+
   if (taskText == "") {
     alert("Please write something before adding!");
   } else {
@@ -199,6 +134,86 @@ addTaskButton.addEventListener("click", function () {
     });
   }
 });
+day1.addEventListener("click", function(){
+  SundayTodo.style.display="block"
+  MondayTodo.style.display="none"
+  TuesdayTodo.style.display="none"
+  WednesdayTodo.style.display="none"
+  ThursdayTodo.style.display="none"
+  FridayTodo.style.display="none"
+  SaturdayTodo.style.display="none"
+  doTodo.style.display="none"
+})
+day2.addEventListener("click", function(){
+  SundayTodo.style.display="none"
+  MondayTodo.style.display="block"
+  TuesdayTodo.style.display="none"
+  WednesdayTodo.style.display="none"
+  ThursdayTodo.style.display="none"
+  FridayTodo.style.display="none"
+  SaturdayTodo.style.display="none"
+  doTodo.style.display="none"
+})
+day3.addEventListener("click", function(){
+  SundayTodo.style.display="none"
+  MondayTodo.style.display="none"
+  TuesdayTodo.style.display="block"
+  WednesdayTodo.style.display="none"
+  ThursdayTodo.style.display="none"
+  FridayTodo.style.display="none"
+  SaturdayTodo.style.display="none"
+  doTodo.style.display="none"
+})
+day4.addEventListener("click", function(){
+  SundayTodo.style.display="none"
+  MondayTodo.style.display="none"
+  TuesdayTodo.style.display="none"
+  WednesdayTodo.style.display="block"
+  ThursdayTodo.style.display="none"
+  FridayTodo.style.display="none"
+  SaturdayTodo.style.display="none"
+  doTodo.style.display="none"
+})
+day5.addEventListener("click", function(){
+  SundayTodo.style.display="none"
+  MondayTodo.style.display="none"
+  TuesdayTodo.style.display="none"
+  WednesdayTodo.style.display="none"
+  ThursdayTodo.style.display="block"
+  FridayTodo.style.display="none"
+  SaturdayTodo.style.display="none"
+  doTodo.style.display="none"
+})
+day6.addEventListener("click", function(){
+  SundayTodo.style.display="none"
+  MondayTodo.style.display="none"
+  TuesdayTodo.style.display="none"
+  WednesdayTodo.style.display="none"
+  ThursdayTodo.style.display="none"
+  FridayTodo.style.display="block"
+  SaturdayTodo.style.display="none"
+  doTodo.style.display="none"
+})
+day7.addEventListener("click", function(){
+  SundayTodo.style.display="none"
+  MondayTodo.style.display="none"
+  TuesdayTodo.style.display="none"
+  WednesdayTodo.style.display="none"
+  ThursdayTodo.style.display="none"
+  FridayTodo.style.display="none"
+  SaturdayTodo.style.display="block"
+  doTodo.style.display="none"
+})
+all.addEventListener("click", function(){
+  SundayTodo.style.display="none"
+  MondayTodo.style.display="none"
+  TuesdayTodo.style.display="none"
+  WednesdayTodo.style.display="none"
+  ThursdayTodo.style.display="none"
+  FridayTodo.style.display="none"
+  SaturdayTodo.style.display="none"
+  doTodo.style.display="block"
+})
 
 function edit(editButton) {
   let listItem = editButton.parentElement;

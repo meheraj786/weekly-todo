@@ -2,9 +2,109 @@ const taskInput = document.getElementById("new-task");
 const addTaskButton = document.getElementById("add-task"); 
 const todoList = document.getElementById("todo-list"); 
 const doneList = document.getElementById("done-list"); 
+const sunList= document.querySelector("#sunday-list")
+const monList= document.querySelector("#monday-list")
+const tuesList= document.querySelector("#tuesday-list")
+const wedList= document.querySelector("#wednesday-list")
+const thursList= document.querySelector("#thirsday-list")
+const friList= document.querySelector("#friday-list")
+const satList= document.querySelector("#saturday-list")
 
 addTaskButton.addEventListener("click", function () {
   const taskText = taskInput.value;
+  let Sunday= document.querySelector(".Sunday")
+  let Monday= document.querySelector(".Monday")
+  let Tuesday= document.querySelector(".Tuesday")
+  let Wednesday= document.querySelector(".Wednesday")
+  let Thursday= document.querySelector(".Thursday")
+  let Friday= document.querySelector(".Friday")
+  let Saturday= document.querySelector(".Saturday")
+  let SundayTodo= document.querySelector(".do-todo-sunday")
+  let MondayTodo= document.querySelector(".do-todo-monday")
+  let TuesdayTodo= document.querySelector(".do-todo-tuesday")
+  let WednesdayTodo= document.querySelector(".do-todo-wednesday")
+  let ThursdayTodo= document.querySelector(".do-todo-thursday")
+  let FridayTodo= document.querySelector(".do-todo-friday")
+  let SaturdayTodo= document.querySelector(".do-todo-saturday")
+
+
+  let day1= document.querySelector(".day1")
+  let day2= document.querySelector(".day2")
+  let day3= document.querySelector(".day3")
+  let day4= document.querySelector(".day4")
+  let day5= document.querySelector(".day5")
+  let day6= document.querySelector(".day6")
+  let day7= document.querySelector(".day7")
+  day1.addEventListener("click", function(){
+    SundayTodo.style.display="flex"
+    MondayTodo.style.display="none"
+    TuesdayTodo.style.display="none"
+    WednesdayTodo.style.display="none"
+    ThursdayTodo.style.display="none"
+    FridayTodo.style.display="none"
+    SaturdayTodo.style.display="none"
+    todoList.style.display="none"
+  })
+  day2.addEventListener("click", function(){
+    SundayTodo.style.display="none"
+    MondayTodo.style.display="flex"
+    TuesdayTodo.style.display="none"
+    WednesdayTodo.style.display="none"
+    ThursdayTodo.style.display="none"
+    FridayTodo.style.display="none"
+    SaturdayTodo.style.display="none"
+    todoList.style.display="none"
+  })
+  day3.addEventListener("click", function(){
+    SundayTodo.style.display="none"
+    MondayTodo.style.display="none"
+    TuesdayTodo.style.display="flex"
+    WednesdayTodo.style.display="none"
+    ThursdayTodo.style.display="none"
+    FridayTodo.style.display="none"
+    SaturdayTodo.style.display="none"
+    todoList.style.display="none"
+  })
+  day4.addEventListener("click", function(){
+    SundayTodo.style.display="none"
+    MondayTodo.style.display="none"
+    TuesdayTodo.style.display="none"
+    WednesdayTodo.style.display="flex"
+    ThursdayTodo.style.display="none"
+    FridayTodo.style.display="none"
+    SaturdayTodo.style.display="none"
+    todoList.style.display="none"
+  })
+  day5.addEventListener("click", function(){
+    SundayTodo.style.display="none"
+    MondayTodo.style.display="none"
+    TuesdayTodo.style.display="none"
+    WednesdayTodo.style.display="none"
+    ThursdayTodo.style.display="flex"
+    FridayTodo.style.display="none"
+    SaturdayTodo.style.display="none"
+    todoList.style.display="none"
+  })
+  day6.addEventListener("click", function(){
+    SundayTodo.style.display="none"
+    MondayTodo.style.display="none"
+    TuesdayTodo.style.display="none"
+    WednesdayTodo.style.display="none"
+    ThursdayTodo.style.display="none"
+    FridayTodo.style.display="flex"
+    SaturdayTodo.style.display="none"
+    todoList.style.display="none"
+  })
+  day7.addEventListener("click", function(){
+    SundayTodo.style.display="none"
+    MondayTodo.style.display="none"
+    TuesdayTodo.style.display="none"
+    WednesdayTodo.style.display="none"
+    ThursdayTodo.style.display="none"
+    FridayTodo.style.display="none"
+    SaturdayTodo.style.display="flex"
+    todoList.style.display="none"
+  })
   if (taskText == "") {
     alert("Please write something before adding!");
   } else {
@@ -22,7 +122,51 @@ addTaskButton.addEventListener("click", function () {
         </svg>
       </button>
     `;
-    todoList.appendChild(listItem);
+    const days = [
+      { checkbox: Sunday, list: sunList },
+      { checkbox: Monday, list: monList },
+      { checkbox: Tuesday, list: tuesList },
+      { checkbox: Wednesday, list: wedList },
+      { checkbox: Thursday, list: thursList },
+      { checkbox: Friday, list: friList },
+      { checkbox: Saturday, list: satList },
+      
+    ];
+  
+    days.forEach(day => {
+      if (day.checkbox.checked) {
+        const newListItem = listItem.cloneNode(true);
+        day.list.appendChild(newListItem);
+    
+        const editButton = newListItem.querySelector('.edit');
+        const deleteButton = newListItem.querySelector('.delete-button');
+        const checkbox = newListItem.querySelector('.task-checkbox');
+    
+        if (editButton) {
+          editButton.style.display = 'none';
+        }
+    
+        if (deleteButton) {
+          deleteButton.style.display = 'none';
+        }
+
+        checkbox.addEventListener("input", function () {
+          if (checkbox.checked) {
+            doneList.appendChild(newListItem);
+            listItem.style.textDecoration = "line-through";
+            editBtn.style.display="none"
+            
+            listItem.style.backgroundColor = "#e4b5b0";
+          } else {
+            day.list.appendChild(newListItem);
+            listItem.style.textDecoration = "none";
+            listItem.style.backgroundColor = "#99b4eb";
+            editBtn.style.display="inline-block"
+          }
+        });
+      }
+    });
+    todoList.append(listItem);
     listItem.style.backgroundColor = "#99b4eb";
     taskInput.value = "";
 
@@ -129,38 +273,38 @@ function edit(editButton) {
 }
 
 
-const parralax1 = document.querySelectorAll("#icons .img1");
-const parralaxArr1= Array.from(parralax1)
-let s = 250;
+// const parralax1 = document.querySelectorAll("#icons .img1");
+// const parralaxArr1= Array.from(parralax1)
+// let s = 250;
 
-parralaxArr1.map((item)=>{
+// parralaxArr1.map((item)=>{
 
-  document.body.addEventListener("mousemove", function (e) {
-    let x = e.clientX;
-    let y = e.clientY;
-    console.log(x);
+//   document.body.addEventListener("mousemove", function (e) {
+//     let x = e.clientX;
+//     let y = e.clientY;
+//     console.log(x);
   
-    item.style.transform = `
-      translate(
-        ${x / s}%,
-        ${y / s}%
-      )`;
-  });
-})
-const parralax2 = document.querySelectorAll("#icons .img2");
-const parralaxArr2= Array.from(parralax2)
-let ss = 250;
+//     item.style.transform = `
+//       translate(
+//         ${x / s}%,
+//         ${y / s}%
+//       )`;
+//   });
+// })
+// const parralax2 = document.querySelectorAll("#icons .img2");
+// const parralaxArr2= Array.from(parralax2)
+// let ss = 250;
 
-parralaxArr2.map((item)=>{
+// parralaxArr2.map((item)=>{
 
-  document.body.addEventListener("mousemove", function (e) {
-    let x = e.clientX;
-    let y = e.clientY;
+//   document.body.addEventListener("mousemove", function (e) {
+//     let x = e.clientX;
+//     let y = e.clientY;
   
-    item.style.transform = `
-      translate(
-        -${x / ss}%,
-        -${y / ss}%
-      )`;
-  });
-})
+//     item.style.transform = `
+//       translate(
+//         -${x / ss}%,
+//         -${y / ss}%
+//       )`;
+//   });
+// })

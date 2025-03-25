@@ -154,6 +154,9 @@ button {
 .do-todo-saturday {
   display: none;
 }
+.do-todo-sunday{
+  display: block;
+}
 .do-todo-sunday .header {
   display: flex;
   justify-content: space-between;

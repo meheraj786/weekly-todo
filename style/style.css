@@ -15,82 +15,50 @@ ul li{
 
 body {
   font-family: "Poppins", sans-serif;
-  /* animation: rotation 30s linear infinite ; */
-  background: url(../assets/vector-JUL-2020-88.jpg) no-repeat center center/cover;
-  backdrop-filter: blur(2px);
+  animation: rotation 30s linear infinite;
   color: black;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
   height: 100vh;
   overflow: hidden;
 }
-img{
-  position: absolute;
-  width: 600px;
+#sidebar{
+  height: 45%;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.11);
+  backdrop-filter: blur(10px);
+  display: flex;  
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
 }
-#icons img:nth-child(1){
-  top: 0;
-  left: 0;
+#sidebar span{
+  border-bottom: 1px solid white;
+  padding-bottom: 2px;
 }
-#icons img:nth-child(2){
-  top: 0;
-  left: 0;
-}
-#icons img:nth-child(3){
-  bottom: 10%;
-  left: 0;
-}
-#icons img:nth-child(4){
-  top: 0;
-  right: 0;
-}
-#icons img:nth-child(5){
-  bottom: 0;
-  right: 0;
-}
-#icons img:nth-child(6){
-  top: 0;
-  right: 0;
-}
-#icons img:nth-child(7){
-  bottom: 0;
-  left: 0;
-}
-#icons img:nth-child(8){
-  top: 20%;
-  right: 0;
-}
-#icons img:nth-child(9){
-  bottom: 20%;
-  left: 0;
-}
-#icons img:nth-child(10){
-  top: 20%;
-  left: 0;
-}
-#icons img:nth-child(11){
-  bottom: 0%;
-  right: 0;
-}
-#icons img:nth-child(12){
-  bottom: 20%;
-  left: 20%;
+#sidebar span:hover{
+  color: var(--dark-orange);
+  border-color: #163677;
 }
 
+
 header {
-  width: 950px;
-  height: 170px;
+  width: auto;
   padding: 21px 35px;
   margin-bottom: 20px;
   background: white;
   background: rgba(255, 255, 255, 0.11);
   border: 1px solid rgba(255, 255, 255, 0.24);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(10px);
   color: white;
   border-radius: 20px;
+  padding-bottom: 10px;
 }
 header .header{
   display: flex;
@@ -105,9 +73,17 @@ header .header h1{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 16%;
+  width: 30%;
   margin-bottom: 20px;
 }
+.checkbox{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+}
+
+
 
 
 
@@ -117,15 +93,14 @@ input, button {
   border-radius: 5px;
   border: none;
   font-size: 16px;
-
 }
 .input{
 position: relative;
-width: 100%;
+width: auto;
 
 }
 #new-task{
-  width: 880px;
+  width: 850px;
   height: 50px;
   border-radius: 30px;
   padding-right: 120px;
@@ -139,25 +114,19 @@ width: 100%;
   border: 1px solid var(--dark-orange);
   color: white;
   cursor: pointer;
-  width: 98px;
+  width: 90px;
   height: 40px;
   border-radius: 30px;
   position: absolute;
   color: white;
   top: 5px;
-  right: 0;
+  right: 3%;
 }
 #add-task:hover{
   background-color: transparent;
   border: 1px solid var(--dark-orange);
   color: var(--dark-orange);
-  cursor: pointer;
-  width: 98px;
-  height: 40px;
-  border-radius: 30px;
-  position: absolute;
-  top: 5px;
-  right: 0;
+
 }
 .todo{
   display: flex;
@@ -172,7 +141,7 @@ width: 100%;
   border-radius: 20px;
   padding: 30px 35px;
   padding-bottom: 50px;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.24);
 }
 .do-todo .header{
@@ -309,27 +278,92 @@ li {
   border: 1px solid var(--dark-orange);
 }
 
+.checkbox .check{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+  .checkbox .ikxBAC {
+    appearance: none;
+    background-color: #dfe1e4;
+    border-radius: 72px;
+    border-style: none;
+    flex-shrink: 0;
+    height: 20px;
+    margin: 0;
+    margin-right: 10px;
+    position: relative;
+    width: 30px;
+    cursor: pointer;
+  }
+
+  .checkbox .ikxBAC::before {
+    bottom: -6px;
+    content: "";
+    left: -6px;
+    position: absolute;
+    right: -6px;
+    top: -6px;
+  }
+
+  .checkbox .ikxBAC,
+  .checkbox .ikxBAC::after {
+    transition: all 100ms ease-out;
+  }
+
+  .checkbox .ikxBAC::after {
+    background-color: #fff;
+    border-radius: 50%;
+    content: "";
+    height: 14px;
+    left: 3px;
+    position: absolute;
+    top: 3px;
+    width: 14px;
+  }
+
+  .checkbox input[type=checkbox] {
+    cursor: default;
+  }
+
+  .checkbox .ikxBAC:hover {
+    background-color: #c9cbcd;
+    transition-duration: 0s;
+  }
+
+  .checkbox .ikxBAC:checked {
+    background-color: var(--dark-orange);
+  }
+
+  .checkbox .ikxBAC:checked::after {
+    background-color: #fff;
+    left: 13px;
+  }
+
+  .checkbox :focus:not(.focus-visible) {
+    outline: 0;
+  }
+
+  .checkbox .ikxBAC:checked:hover {
+    background-color: var(--orange);
+  }
+
+
+
 
 
 @media (max-width: 600px){
-  body {
-    font-family: "Poppins", sans-serif;
-    animation: rotation 30s linear infinite ;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: auto;
-    height: 100vh;
+
+  img{
+    display: none;
   }
   header {
     width: 100%;
     height: auto;
     padding: 21px 35px;
     margin-bottom: 20px;
-    background: white;
-    border-radius: 20px;
   }
   header .header{
     display: flex;
@@ -357,20 +391,17 @@ li {
       border-radius: 30px;
       padding-right: 120px;
       padding-left: 20px;
-      background: #EDEEF0;
     }
     
     
     #add-task{
       background-color: var(--dark-orange);
       border: 1px solid var(--dark-orange);
-      color: white;
       cursor: pointer;
       width: 88px;
       height: 40px;
       border-radius: 30px;
       position: absolute;
-      color: white;
       top: 5px;
       right: 0;
     }
@@ -384,7 +415,6 @@ li {
     
     .do-todo, .done-todo{
       width: 100%;
-      background: white;
       border-radius: 20px;
       padding: 30px 35px;
       padding-bottom: 50px;

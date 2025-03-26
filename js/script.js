@@ -297,3 +297,9 @@
 
 
 
+document.querySelectorAll('.progress-circle').forEach(circle => {
+  circle.addEventListener('input', function() {
+    const progress = this.value;
+    this.style.setProperty('--progress', progress / 100);
+  });
+});

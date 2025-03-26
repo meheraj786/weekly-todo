@@ -399,6 +399,7 @@ li {
   background-color: var(--orange);
 }
 
+
 @media (max-width: 600px) {
   img {
     display: none;

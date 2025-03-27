@@ -1,12 +1,30 @@
 @media (max-width: 600px) {
+  body{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, #163677, #e68b82);
+    overflow-y: scroll;
+  }
+  #main{
+    width: 100%;
+  }
   img {
     display: none;
   }
   header {
     width: 100%;
     height: auto;
-    padding: 21px 35px;
+    padding: 31px 35px;
     margin-bottom: 20px;
+  }
+  #sidebar{
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 8px;
+  }
+  .checkbox{
+flex-wrap: wrap;
+gap: 10px;
   }
   header .header {
     display: flex;
@@ -44,7 +62,7 @@
     border-radius: 30px;
     position: absolute;
     top: 5px;
-    right: 0;
+    right: 2%;
   }
   .todo {
     display: flex;
@@ -54,8 +72,14 @@
     width: 100%;
   }
 
-  .do-todo,
-  .done-todo {
+  .done-todo,
+  .do-todo-sunday,
+  .do-todo-monday,
+  .do-todo-tuesday,
+  .do-todo-wednesday,
+  .do-todo-thursday,
+  .do-todo-friday,
+  .do-todo-saturday {
     width: 100%;
     border-radius: 20px;
     padding: 30px 35px;
@@ -65,5 +89,27 @@
   .do-todo .header {
     display: flex;
     justify-content: space-between;
+  }
+  #stats{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.11);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding: 30px 35px;
+    border-radius: 20px;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+  }
+  .progress-body{
+    width: 100%;
+    height: 25px;
+    background: #edeef0;
+    position: relative;
+    border-radius: 10px;
   }
 }

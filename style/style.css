@@ -437,6 +437,7 @@ li {
 }
 .done{
   padding: 12px;
+  background: #eeb3ad !important;
 }
 
 @media (max-width: 600px) {

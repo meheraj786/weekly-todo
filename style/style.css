@@ -438,75 +438,7 @@ li {
   background: #eeb3ad !important;
 }
 
-@media (max-width: 600px) {
-  img {
-    display: none;
-  }
-  header {
-    width: 100%;
-    height: auto;
-    padding: 21px 35px;
-    margin-bottom: 20px;
-  }
-  header .header {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  header .header h1 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-  }
-  header .header p {
-    margin: 20px 0;
-  }
-  .input {
-    position: relative;
-    width: 100%;
-  }
-  #new-task {
-    width: 100%;
-    height: 50px;
-    border-radius: 30px;
-    padding-right: 120px;
-    padding-left: 20px;
-  }
 
-  #add-task {
-    background-color: var(--dark-orange);
-    border: 1px solid var(--dark-orange);
-    cursor: pointer;
-    width: 88px;
-    height: 40px;
-    border-radius: 30px;
-    position: absolute;
-    top: 5px;
-    right: 0;
-  }
-  .todo {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-
-  .do-todo,
-  .done-todo {
-    width: 100%;
-    border-radius: 20px;
-    padding: 30px 35px;
-    padding-bottom: 50px;
-    margin: 10px 0;
-  }
-  .do-todo .header {
-    display: flex;
-    justify-content: space-between;
-  }
-}
 /* #main{
   background: url(../assets/vecteezy_galaxy-space-abstract-background-with-star-and-comet-shapes_8029888.svg) no-repeat center center/cover;
   width: 150%;

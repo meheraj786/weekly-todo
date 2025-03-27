@@ -72,6 +72,7 @@ addTaskButton.addEventListener("click", function () {
   const deleteButton = listItem.querySelector(".delete-button");
   deleteButton.addEventListener("click", function () {
     listItem.remove();
+    logTaskCounts();
     
   });
 
@@ -305,8 +306,32 @@ function clear(clear) {
   });
 }
 function logTaskCounts() {
-  let doList= document.querySelectorAll('.do').length
-  let doneList=document.querySelectorAll('.done').length
-  let doNum= document.querySelector(".do-todo-num")
-  
+  let doList = document.querySelectorAll('.do').length;
+  let doneList = document.querySelectorAll('.done').length;
+  let totalTasks = doList + doneList;
+
+  let doNum = document.querySelector(".do-todo-num");
+  let doneNum = document.querySelector(".done-todo-num");
+  let progressBar = document.querySelector(".progress-bar");
+
+  doNum.innerHTML = `You have ${doList} To-Do's`;
+  doneNum.innerHTML = `You have ${doneList} complete To-Do's`;
+
+  // Calculate completion percentage
+  let completionPercent = totalTasks > 0 ? Math.round((doneList / totalTasks) * 100) : 0;
+
+  // Update progress bar width and text
+  if (completionPercent==0) {
+    progressBar.style.color="red"
+    progressBar.innerHTML = `${completionPercent}%`;
+    progressBar.style.backgroundColor="#edeef0"
+    progressBar.style.transitionDuration="2s"
+    progressBar.style.width="100%"
+  }else{
+    progressBar.style.width = `${completionPercent}%`;
+    progressBar.innerHTML = `${completionPercent}%`;
+    progressBar.style.color="#ff5945"
+    progressBar.style.transitionDuration="2s"
+    progressBar.style.backgroundColor="#163677"
+  }
 }

@@ -408,6 +408,18 @@ li {
   position: relative;
   border-radius: 10px;
 }
+.progress-bar{
+  height: 20px;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  left: 0;
+}
 #stats{
   display: flex;
   background: rgba(255, 255, 255, 0.11);
@@ -420,20 +432,6 @@ li {
   border-radius: 20px;
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.24);
-}
-.progress-bar{
-  width: 20%;
-  height: 20px;
-  border-radius: 8px;
-  background: var(--dark-orange);
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 12px;
-  left: 0;
 }
 .done{
   padding: 12px;

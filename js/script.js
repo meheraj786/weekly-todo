@@ -65,13 +65,14 @@ addTaskButton.addEventListener("click", function () {
            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
          </svg></button>
     `;
-
   taskInput.value = "";
+
 
   // Delete functionality
   const deleteButton = listItem.querySelector(".delete-button");
   deleteButton.addEventListener("click", function () {
     listItem.remove();
+    
   });
 
   // Edit functionality
@@ -113,6 +114,7 @@ addTaskButton.addEventListener("click", function () {
            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
          </svg></button>
                 `;
+        listItem.classList.add("do");
 
         listItem.querySelector(".edit").addEventListener("click", function () {
           editTask(this);
@@ -130,6 +132,7 @@ addTaskButton.addEventListener("click", function () {
             moveToDoneList(this, listItem);
           });
       }
+    
     });
   }
 
@@ -145,15 +148,13 @@ addTaskButton.addEventListener("click", function () {
       const check = listItem.querySelector(".task-checkbox");
       check.addEventListener("change", function () {
         moveToDoneList(check, listItem);
+        logTaskCounts()
       });
     }
   });
 
-  if (!addedToDay) {
-    alert("Choose your day");
-    return;
-  }
-});
+
+  logTaskCounts()});
 
 function moveToDoneList(check, listItem) {
   if (check.checked) {
@@ -165,23 +166,9 @@ function moveToDoneList(check, listItem) {
     const editButton = listItem.querySelector(".edit");
     checkbox.style.display = "none";
     editButton.style.display = "none";
-  } else {
-    let parentList = listItem.parentElement;
-
-    if (parentList) {
-      parentList.appendChild(listItem);
-      listItem.classList.remove("done");
-      listItem.classList.add("do");
-
-      const checkbox = listItem.querySelector(".task-checkbox");
-      const editButton = listItem.querySelector(".edit");
-      checkbox.style.display = "inline-block";
-      editButton.style.display = "inline-block";
-    }
   }
-  const done= document.querySelectorAll(".done")
-  console.log(done.length);
 }
+
 let day1 = document.querySelector(".day1");
 let day2 = document.querySelector(".day2");
 let day3 = document.querySelector(".day3");
@@ -311,10 +298,15 @@ day7.addEventListener("click", function () {
 });
 
 function clear(clear) {
-  let clearArr= Array.from(clear)
+  let clearArr = Array.from(clear);
 
-  clearArr.map((item)=>{
-    item.remove()
-  })
+  clearArr.map((item) => {
+    item.remove();
+  });
+}
+function logTaskCounts() {
+  let doList= document.querySelectorAll('.do').length
+  let doneList=document.querySelectorAll('.done').length
+  let doNum= document.querySelector(".do-todo-num")
   
 }
